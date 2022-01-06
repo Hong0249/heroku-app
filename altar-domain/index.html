@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Welcome to UTEM Domain</title>
+    <script>
+      let HOST = location.origin.replace(/^http/, 'ws')
+      let ws = new WebSocket(HOST);
+      let el;
+
+      ws.onmessage = (event) => {
+        el = document.getElementById('server-time');
+        el.innerHTML = 'Server time: ' + event.data;
+      };
+    </script>
+  </head>
+  
+  <body>
+    <h2>Hi! Welcome To This Page</h2>
+    <p id="server-time"></p>
+    <button type="button"
+    onclick="document.getElementById('localtime').innerHTML = Date()">
+    Click me to display current Date and Time.</button>
+    <p id="localtime"></p>
+    <p>Created by : Yak Xuan Hong from 2BENR S2</p>
+    <p>Matric Num :<b>B022010002</b></p>
+
+    <a href="https://youtu.be/6DiKlXUpizE">Link to video</a>
+    
+  </body>
+</html>
